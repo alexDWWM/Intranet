@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0" version="25.0.1">
+  <diagram name="Page-1" id="hZ_Lcsd-_co5n0wPDB7T">
+    <mxGraphModel dx="1089" dy="776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BEzDXrjVHcQCr52meg-2-1" value="Site INTRANET gestion PDV/RAYON" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="810" height="980" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-5" value="Agenda" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="670" y="329" width="120" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-6" value="Rayon:..../Responsable" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="10" y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-7" value="BENEF / CA / DEPENSE" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="10" y="329" width="180" height="111" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-8" value="&lt;div&gt;Benef&lt;/div&gt;&lt;div&gt;CA&lt;/div&gt;&lt;div&gt;DEPENSE&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-7">
+          <mxGeometry x="20" y="41" width="60" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-9" value="Facture" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="10" y="450" width="180" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-10" value="Stock" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="210" y="330" width="450" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-16" value="category" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-10">
+          <mxGeometry x="10" y="40" width="120" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-18" value="Vertical Container" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-10">
+          <mxGeometry x="140" y="40" width="290" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-12" value="Bienvenue user" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="670" y="30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-13" value="personnel" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="670" y="550" width="120" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-14" value="footer" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-1">
+          <mxGeometry x="-1" y="780" width="810" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-15" value="&lt;div&gt;coordonée pdv&lt;/div&gt;&lt;div&gt;coordonée Superuser&lt;/div&gt;&lt;div&gt;coordonée forunisseur&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="BEzDXrjVHcQCr52meg-2-14">
+          <mxGeometry x="231" y="30" width="330" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-2" value="Courbe évolutive CA / BENEF" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="79" width="790" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-3" value="%" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="89" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BEzDXrjVHcQCr52meg-2-4" value="date" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="110" y="89" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
