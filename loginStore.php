@@ -6,7 +6,6 @@ if (empty($_SESSION['user'])){
 }else if(($_SESSION['user']['role'] === 'user')){
     header('location:404.php');
 }else{
-    var_dump($_SESSION['user']);
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['mail'];
     $password = $_POST['password'];

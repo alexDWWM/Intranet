@@ -24,7 +24,7 @@ if (empty($_SESSION['user'])){
     <?php }else{ 
         $departements = getAllDepartements($pdv['id'])?>
         <?php foreach($departements as $departement){?>
-    <a href="departement.php"><p><?php echo $departements[$tab]['name'];?></p></a>
+    <a href="departement.php?id=<?php echo $departement['id']?>"><p><?php echo $departements[$tab]['name'];?></p></a>
     <?php $tab= $tab + 1;}//add 1 at each loop for get the following tab?>
 <?php };
 } ?>
