@@ -12,5 +12,12 @@
         require_once('loginUser.php');
      } ?>
 </section>
+<section>
+    <?php if (!empty($_SESSION['point'])){
+        require_once('store.php');
+    }else if (!empty($_SESSION['user'])){
+        require_once('loginStore.php');
+        }?>
+</section>
 
 <?php require_once('components/footer.php')?>

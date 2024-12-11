@@ -1,7 +1,7 @@
 <!-- take all the function for all page and start the session -->
 <?php 
 
-require_once('function/function.php');
+require_once('function/functionSelect.php');
 require_once('function/functionLogin.php');
 
 session_start();

@@ -1,7 +1,5 @@
 <?php require_once('components/head.php');
 
-
-
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['email'];
     $password = $_POST['password'];

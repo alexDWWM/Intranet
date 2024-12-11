@@ -1,6 +1,6 @@
 <?php  require_once('components/head.php');
 if (empty($_SESSION['user'])){
-    header('location:loginUser.php');
+    header('location:index.php');
 }else if(($_SESSION['user']['role'] === 'user')){
     header('location:404.php');
 }else{
@@ -20,7 +20,7 @@ if (empty($_SESSION['user'])){
 
     <?php if ($user_role ==="admin"){
         $departements = getDepartements($pdv['id']);?>
-        <a href="departement.php"><p><?php echo $departements['name'];?></p></a>
+        <a href="departement.php?id=<?php echo $departements['id']?>"><p><?php echo $departements['name'];?></p></a>
     <?php }else{ 
         $departements = getAllDepartements($pdv['id'])?>
         <?php foreach($departements as $departement){?>

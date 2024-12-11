@@ -2,7 +2,7 @@
 require_once('components/head.php');
 $pdvs = getPdv($_SESSION['user']['id']);
 if (empty($_SESSION['user'])){
-    header('location:loginUser.php');
+    header('location:index.php');
 }else if(($_SESSION['user']['role'] === 'user')){
     header('location:404.php');
 }else{
