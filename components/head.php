@@ -3,6 +3,7 @@
 
 require_once('function/functionSelect.php');
 require_once('function/functionLogin.php');
+require_once('function/functionAdd.php');
 
 session_start();
 

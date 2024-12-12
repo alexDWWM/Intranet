@@ -2,7 +2,17 @@
 
 
 ?>
-
+<section>
+    <?php if (!empty($_SESSION['point'])){
+        header('location:store.php');
+    }else if ((!empty($_SESSION['user'])) && (empty($_SESSION['point']))){
+        if(($_SESSION['user']['role'] === 'admin') OR ($_SESSION['user']['role'] === 'admin')){
+        header('location:loginStore.php');
+        }else{
+            
+        }
+    }?>
+</section>
 <section>
     <h2>Bienvenue sur l'intranet de<!--name business--></h2>
     <?php if (isset($_SESSION['user'])&& !empty($_SESSION['user'])){
@@ -12,12 +22,6 @@
         require_once('loginUser.php');
      } ?>
 </section>
-<section>
-    <?php if (!empty($_SESSION['point'])){
-        require_once('store.php');
-    }else if (!empty($_SESSION['user'])){
-        require_once('loginStore.php');
-        }?>
-</section>
+
 
 <?php require_once('components/footer.php')?>

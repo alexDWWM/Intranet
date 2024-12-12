@@ -15,12 +15,14 @@ if(isset($_POST) && !empty($_POST)){
                 'role'=>$user['role'],
                 'lastname'=>$user['lastname'],
             ];
-            $user = $_SESSION['user'];
-            if(($user['role'] === 'superAdmin') or ($user['role'] === 'admin')){
-                header('location:loginStore.php'); 
+            
+            if($_SESSION['user']['role'] === 'user'){
+                header('location:staff.php'); 
             }else{
-                header('location:staff.php');
+                header('location:loginStore.php');
             }
+        }else{
+            echo 'mauvais identifiant ou mauvais mot de passe';
         }
     }else{
         echo 'mauvais identifiant ou mauvais mot de passe';

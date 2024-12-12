@@ -160,3 +160,13 @@ function getFacture($id){
     $result = $stmt ->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+function getAllStaff($pdv){
+    $dbh = dbconnect();
+    $query ="SELECT poste, firstname, lastname, phone, mail, id FROM user 
+    JOIN user_pdv ON user_pdv.user_id = user.id WHERE user_pdv.id_pdv = :pdv";
+    $stmt = $dbh->prepare($query);
+    $stmt->bindParam(':pdv', $pdv);
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $results;
+}
