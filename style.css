@@ -1,14 +1,65 @@
+body{
+    margin: 0;
+}
+.container{
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+    color: azure;
+    margin: 1%;
+    width: 15%;
+    text-align: center;
+}
 .navbar{
     display: flex;
+    justify-content: space-between;
     background-color: grey;
+    width: 100%;
+    padding: 1%;
 }
 .nav{
     display: flex;
 }
-.addStaff{
+.nav > a {
+    margin-top: 3%;
+}
+.connexion-navbar{
+    width: 20%;
+    padding: 1%;
+    display: flex;
+}
+.connexion-navbar > a{
+    margin-right:20%;
+    width: 50%;
+}
+.loginStore-foreach{
+    display: flex;
+    justify-content: center;
+}
+.contain-log-pdv{
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: 5%;
+    width: 25%;
+    text-align: center;
+}
+.contain-log-pdv > img {
+    width:95%;
+    height:50%; 
+    margin-top:2%;
+    border-radius: 10px;
+}
+.log-pdv{
+
+}
+.form-log-pdv{
     display: none;
 }
-.deleteStaff{
+
+.addStaff,.deleteStaff,.img-fact{
     display: none;
 }
 .active{
@@ -18,3 +69,11 @@
     margin: 2%;
     background-color: red;    
 }
+.facture-page > img{
+    max-height:30em;
+}
+
+.img-fact{
+    max-height: 30em;
+}
+ 

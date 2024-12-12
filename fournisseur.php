@@ -17,7 +17,10 @@ if (($_SESSION['user']) && ($_GET['id'])){
     $dt = new DateTime($fact['date'])?>
     <a href="facture.php?id=<?php echo $fact['id_facture']?>">
         <p>Facture n° :<?php echo $fact['numero'];?></p></a>
-        <img src="<?php echo $fact['image']?>" alt="facture n° : <?php echo $fact['numero']?> ">
+        <button id="voirFacture">Voir Facture</button>
+        <img src="uploads/<?php echo $fact['image']?>" class="img-fact"
+            alt="img_facture n° : <?php echo $fact['numero']?>" width="100%">
         <p><?php echo $fact['total'],' ';?>€</p>
         <p><?php echo $date = $dt->format('j/m/Y');?></p>
-<?php } ?>
+<?php } 
+require_once('components/footer.php')?>

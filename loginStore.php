@@ -33,17 +33,20 @@ if(isset($_POST) && !empty($_POST)){
 
     // do not specify the wrong credantial for not to facilitate attacks
 ?>
-<?php foreach($pdvs as $pdv){
-    echo $pdv['name'];?>
-    <section>
-    <form action="" method="post">
-        <input type="hidden" name="pdvId" value="<?php echo $pdv['id']?>">
-        <input type="email" placeholder="email" name=mail>
-        <input type="password" placeholder="password" name="password">
-        <input type="submit" value="Connexion" class="btnSub">
-    </form>    
-</section>
+<section class="loginStore-foreach">
+<?php foreach($pdvs as $pdv){ ?>
+    <section class="contain-log-pdv" style="width:20%">
+        <img src="uploads/ressources/<?php echo $pdv['image']?>"alt="<?php echo $pdv['image']?>">
+        <h2 class="log-pdv"><?php echo $pdv['name'];?> </h2>
+        <form action="" method="post" class="form-log-pdv">
+            <input type="hidden" name="pdvId" value="<?php echo $pdv['id']?>">
+            <input type="email" placeholder="email" name=mail>
+            <input type="password" placeholder="password" name="password">
+            <input type="submit" value="Connexion" class="btnSub">
+        </form>    
+    </section>
 <?php } ?>
+</section>
 <!--when Admin is connect redirect to page on his departement-->
 <!--when superAdmin is connect redirect to page where he got all the departement
 or if he got several store, he got a choice in input select with all his store -->

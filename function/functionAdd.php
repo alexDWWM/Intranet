@@ -22,3 +22,15 @@ function deleteStaff($firstname,$lastname){
     $stmt ->bindParam(':prenom', $lastname);
     $stmt->execute();
 }
+function addFacture($date, $numero, $image, $total, $fournisseur){
+    $dbh = dbconnect();
+    $query = "INSERT INTO facture(date,numero,image,total,fournisseur) 
+    VALUES (:date, :numero, :image, :total, :fournisseur)";
+    $stmt = $dbh->prepare($query);
+    $stmt -> bindParam(':date', $date);
+    $stmt->bindParam(':numero', $numero);
+    $stmt ->bindParam(':image', $image);
+    $stmt ->bindParam(':total', $total);
+    $stmt ->bindParam(':fournisseur', $fournisseur);
+    $stmt->execute();
+}

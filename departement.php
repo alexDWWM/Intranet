@@ -6,6 +6,34 @@ if (($_SESSION['user']) && (isset($_GET['id']))){
     $id = $_GET['id'];// get ID of departement
     $tab = 0;// init tab for $cat
 }
+if(isset($_POST) && !empty($_POST)){
+    $numero = $_POST['numero'];
+    $fournisseurID = $_POST['fournisseur'];
+    $total = $_POST['total'];
+    $date = $_POST['date'];
+    if(isset($_FILES) && !empty($_FILES)){// get the (POST -> FILE)
+        $tmpName = $_FILES['file']['tmp_name'];
+        $name = $_FILES['file']['name'];
+        $size = $_FILES['file']['size'];
+        $error = $_FILES['file']['error'];
+            $tabExtension = explode('.',$name);
+            $extension = strtolower(end($tabExtension));//get type of file
+            $uniqueName = uniqid('', true);// get unique name for the file
+            $file = $uniqueName.".".$extension;//concatenation with extension of file
+            $extensionsAvaible = ['jpeg','png', 'jpeg', 'jpg'];
+            $maxSize = 400000;
+            if(in_array($extension, $extensionsAvaible)){
+                if($size <= $maxSize && $error == 0){
+                    move_uploaded_file($tmpName, './uploads/invoices/'.$file);// move file in folder
+                }else{
+                    echo "Trop Volumineux";}
+            }else{
+                echo "Mauvaise Extension";
+            }           
+        }addFacture($date, $numero,$file,$total,$fournisseurID);
+    echo 'Enregistrer';
+    }
+    
 
 ?>
 <!--STOCK-->
@@ -36,11 +64,12 @@ foreach($fournisseurs as $fournisseur){?>
     <?php $factures =getFactureByFour($fournisseur['id']);//Get all invoice by supplier
     foreach($factures as $facture){
         $dt = new DateTime($facture['date']);?>
-        <a href="facture.php?id=<?php echo $facture['id']?>">
+        <div class="containStaff">
+        <a href="facture.php?id=<?php echo $facture['id_facture'];?>">
             <p>Commande n° :<?php echo $facture['numero']?>:</p>
             <p>Total :<?php echo $facture['total'];' '?>€
             <?php echo $date = $dt->format('j/m/Y') ;?></p>
-        </a>
+        </a></div>
    <?php };
 }?>
 <!-- Courbe-->
@@ -56,4 +85,21 @@ foreach($fournisseurs as $fournisseur){?>
         <p>Dépense : <?php echo $spend['spend'],' ';?>€</p>
     <?php }
 ?>
+<!-- add invoices -->
+ <form action="" method="post" enctype="multipart/form-data">
+    <label for="">Numéro de facture</label>
+        <input type="text" name="numero">
+    <label for="">Total:</label>
+        <input type="text" name="total">
+    <label for="">Facture</label>
+        <input type="file" name="file">
+    <label for="">Fournisseur</label>
+        <select name="fournisseur" id="fournisseur">
+            <?php foreach($fournisseurs as $fournisseur){?>
+                <option value="<?php echo $fournisseur['id']?>"><?php echo $fournisseur['name'] ?></option>
+            <?php } ?>
+        </select>
+    <input type="hidden" name="date" value="<?php echo date("Y-m-d H:i:s")?>">
+    <input type="submit" placeholder="Enregistrer">
+ </form>
 </div>
